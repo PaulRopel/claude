@@ -1,0 +1,33 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-plugins-local",
+  "description": "Local development plugins for Flutter and Svelte development",
+  "owner": {
+    "name": "Paul",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "flutter-dev",
+      "description": "Flutter development plugin with hooks, LSP, and feature development tools (FVM-enabled)",
+      "version": "1.0.0",
+      "author": {
+        "name": "Paul"
+      },
+      "source": "./plugins/flutter-dev-plugin",
+      "category": "development",
+      "strict": false
+    },
+    {
+      "name": "svelte-dev",
+      "description": "Svelte development plugin with hooks, LSP, and feature development tools",
+      "version": "1.0.0",
+      "author": {
+        "name": "Paul"
+      },
+      "source": "./plugins/svelte-dev-plugin",
+      "category": "development",
+      "strict": false
+    }
+  ]
+}

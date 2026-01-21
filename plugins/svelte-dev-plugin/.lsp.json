@@ -1,0 +1,12 @@
+{
+  "svelte": {
+    "command": "node",
+    "args": [
+      "node_modules/.bin/svelte-language-server",
+      "--stdio"
+    ],
+    "extensionToLanguage": {
+      ".svelte": "svelte"
+    }
+  }
+}

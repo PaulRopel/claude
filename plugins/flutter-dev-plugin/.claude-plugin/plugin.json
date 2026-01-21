@@ -1,0 +1,8 @@
+{
+  "name": "flutter-dev",
+  "description": "Flutter development plugin with hooks, LSP, and feature development tools (FVM-enabled)",
+  "version": "1.0.0",
+  "author": {
+    "name": "Paul"
+  }
+}

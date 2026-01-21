@@ -1,0 +1,8 @@
+{
+  "name": "svelte-dev",
+  "description": "Svelte development plugin with hooks, LSP, and feature development tools",
+  "version": "1.0.0",
+  "author": {
+    "name": "Paul"
+  }
+}

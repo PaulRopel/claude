@@ -1,0 +1,52 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "filePattern": "\\.dart$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "fvm dart format $FILE"
+          },
+          {
+            "type": "command",
+            "command": "fvm dart fix --apply $FILE"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "filePattern": "_test\\.dart$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "fvm flutter test"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "filePattern": "\\.dart$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -q '\\.g\\.dart\\|\\.freezed\\.dart' $FILE && fvm dart run build_runner build --delete-conflicting-outputs || true"
+          }
+        ]
+      }
+    ],
+    "PreCommand": [
+      {
+        "matcher": "Bash",
+        "commandPattern": "git commit",
+        "hooks": [
+          {
+            "type": "skill",
+            "skill": "code-review"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "filePattern": "\\.svelte$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run format $FILE || npx prettier --write $FILE || true"
+          },
+          {
+            "type": "command",
+            "command": "npm run lint:fix $FILE || npx eslint --fix $FILE || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "filePattern": "\\.(svelte|ts|js)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run svelte-check || npx svelte-check --workspace . || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "filePattern": "\\.test\\.(ts|js|svelte)$|\\.spec\\.(ts|js|svelte)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run test || npm test || true"
+          }
+        ]
+      }
+    ],
+    "PreCommand": [
+      {
+        "matcher": "Bash",
+        "commandPattern": "git commit",
+        "hooks": [
+          {
+            "type": "skill",
+            "skill": "code-review"
+          }
+        ]
+      }
+    ]
+  }
+}

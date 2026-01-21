@@ -1,0 +1,9 @@
+{
+  "dart": {
+    "command": "fvm",
+    "args": ["dart", "language-server"],
+    "extensionToLanguage": {
+      ".dart": "dart"
+    }
+  }
+}
